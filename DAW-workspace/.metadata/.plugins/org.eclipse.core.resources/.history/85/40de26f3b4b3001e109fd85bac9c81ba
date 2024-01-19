@@ -1,0 +1,37 @@
+package ej23;
+
+public class Profesor extends Persona{
+	
+	private String dni;
+	private Double nota;
+	private Curso curso;
+	
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public Double getNota() {
+		return nota;
+	}
+
+	public void setNota(Double nota) {
+		this.nota = nota;
+	}
+
+	public Curso getCurso() {
+		return curso;
+	}
+
+	public void setCurso(Curso curso) {
+		this.curso = curso;
+	}
+
+	public Profesor(String nombre, Integer edad) {
+		super(nombre, edad);
+	}
+	
+}

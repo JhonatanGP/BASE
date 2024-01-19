@@ -1,0 +1,44 @@
+package ej23;
+
+import java.util.Scanner;
+
+public class App {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);	
+		
+		Profesor profesor = new Profesor();			
+
+		System.out.println("Dime tu nombre");
+		String nombre = scanner.nextLine();
+		profesor.setNombre(nombre);
+		
+		System.out.println("Dime tu edad");
+		Integer edad = scanner.nextInt();
+		profesor.setEdad(edad);
+		
+		Curso curso = new Curso();
+		System.out.println("Dime el id del curso");
+		Long idCurso = scanner.nextLong(); scanner.nextLine(); //desp de pedir un nº y desp quieres una letra, debes poner un scaner primero para el nº y luego para la letra
+		System.out.println("Dime la descripcion del curso");
+		String descCurso = scanner.nextLine();
+		curso.setDescripcion(descCurso);
+		curso.setIdentificador(idCurso);
+		profesor.setCurso(curso);
+		
+		System.out.println("Nombre: " + profesor.getNombre());
+		System.out.println("Edad: " + profesor.getEdad());
+		System.out.println("Nota: " + profesor.getNota());
+
+		
+		System.out.println(profesor.getNombre());
+		System.out.println(profesor.getCurso().getDescripcion());
+		System.out.println(profesor.getCurso().getIdentificador());
+		System.out.println(profesor.getCurso());
+		System.out.println("**************");
+		System.out.println(profesor);
+
+		scanner.close();
+
+	}
+
+}
