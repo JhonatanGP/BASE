@@ -3343,3 +3343,40 @@ java.nio.file.FileSystemException: C:\Users\TECH\Documents\PROGRAMACION\Git Repo
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 5 org.eclipse.core.filesystem 4 273 2024-01-19 15:49:54.573
 !MESSAGE Could not delete: C:\Users\TECH\Documents\PROGRAMACION\Git Repositorios\BASE\DAW-workspace\2TRIM\bin\ej26.
+
+!ENTRY org.eclipse.equinox.security 1 0 2024-01-19 15:52:36.707
+!MESSAGE New keyring password generated. 
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-19 15:53:11.213
+!MESSAGE An exception occurred during push on URI https://github.com/JhonatanGP/BASE: https://github.com/JhonatanGP/BASE: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/JhonatanGP/BASE: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-01-19 15:53:11.214
+!MESSAGE Can't connect to any repository: https://github.com/JhonatanGP/BASE (https://github.com/JhonatanGP/BASE: not authorized)
+
+!ENTRY org.eclipse.egit.core 4 0 2024-01-19 15:54:06.690
+!MESSAGE An exception occurred during push on URI https://github.com/JhonatanGP/BASE: https://github.com/JhonatanGP/BASE: not authorized
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/JhonatanGP/BASE: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:696)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:638)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:541)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:138)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1537)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:269)
+	at org.eclipse.egit.ui.internal.push.PushJob.performJob(PushJob.java:86)
+	at org.eclipse.egit.ui.internal.jobs.RepositoryJob.run(RepositoryJob.java:59)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.egit.ui 4 0 2024-01-19 15:54:06.690
+!MESSAGE Can't connect to any repository: https://github.com/JhonatanGP/BASE (https://github.com/JhonatanGP/BASE: not authorized)
