@@ -19,7 +19,7 @@ public class Alumno extends Persona{
 		this.dni = dni;
 	}
 	// Constructor con el dni,nombre, edad y nota
-	public Alumno(String dni, String nombre, Integer edad, Double nota) {
+	public Alumno(String dni, String nombre, Integer edad, Double nota) { 
 		super(nombre, edad);
 		this.nota = nota;
 	}
