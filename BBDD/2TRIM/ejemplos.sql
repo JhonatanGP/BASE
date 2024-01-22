@@ -191,5 +191,88 @@ select nombre,instr(nombre,'E') "Primera E" ,
     instr(nombre,'E',5,1) "Trampa"
     from futbolistas;
 select instr('la b no la d','a',-2,1) from dual;
+--22/01/2024
 --Funciones para fechas
+/*
+4. Queremos un listado de los nombres de los futbolistas quitando los segundos nombres 
+(nombres compuestos, por ejemplo, borrar LUIS de PEDRO LUIS, quedando solo PEDRO) y poner como alias de 
+columna "SOLO NOMBRE".
+*/
+select nombre from futbolistas;
+select instr(nombre,' ') from futbolistas;
+select substr(nombre || ' ',1,instr(nombre || ' ',' ')) "SOLO NOMBRE" from futbolistas;
+select nombre,extract(day from fecha_nacimiento) from futbolistas;
+ 
+/*
+Ejercicio 15
+1. Obtén en tres columnas independientes, el día, el mes y la fecha de hoy.
+2. Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS.
+3. Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas.
+4. ¿Cuál es el último día de este mes? Muéstralo.
+5. ¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición.
+6. Muestra el día que era hace 4 días. ¿Y el día de mañana?
+*/
+--1
+select extract(day from sysdate) "día", extract(month from sysdate) "mes", sysdate "fecha" from dual;
+--2
+select add_months(sysdate,6) from dual;
+--3
+select floor(months_between(sysdate,fecha_nacimiento)) "meses entre hoy y nacimiento" from futbolistas;
+--4
+select last_day(sysdate) from dual;
+--5
+select next_day(sysdate,'lunes') from dual;
+select next_day(sysdate,'LUNES') from dual;
+--6
+select sysdate-4 from dual;
+select sysdate+1 from dual;
+--
+select add_months('25/06/24',6) from dual;
+select to_date('25/06/24') + 1 from dual;
+ 
+select to_number('75.83€','99.99L')*5+54-salario from futbolistas;
+select to_number('-$75.83','s$99.99')*5+54-salario from futbolistas;
+
+--Lo mismo pero de ANA
+-- Ejercicio 15
+-- 1.  Obtén en tres columnas independientes, el día, el mes y la fecha de hoy.
+select extract( day from sysdate)"Día" , extract( month from sysdate) "Mes" , sysdate "Fecha" from dual;
+ -- 2. Muestra por pantalla la fecha que será dentro de 6 meses utilizando ADD_MONTHS.
+select add_months(sysdate,6) from dual;
+ -- 3. Muestra el número de meses que hay entre hoy y la fecha de nacimiento de todos los futbolistas.
+select floor(months_between(sysdate, fecha_nacimiento)) "Meses entre hoy y nacimiento" from futbolistas;
+ -- 4. ¿Cuál es el último día de este mes? Muéstralo.
+select last_day(sysdate) "Último día del mes" from dual;
+ -- 5. ¿Qué día será el próximo lunes? Ponlo por pantalla mediante una petición.
+select next_day(sysdate, 'lunes') "Siguiente lunes" from dual;
+ -- 6. Muestra el día que era hace 4 días. ¿Y el día de mañana?
+select sysdate - 4 "Hace 4 días", sysdate + 1 "Mañana" from dual;
+ -- TO_DATE
+select add_months(to_date('25/06/24'),6) from dual;
+-- TO_NUMBER
+select to_number('75.83€','99.99L')*5+54 from dual;
+select to_number('$75.83','$99.99')*5+54 from dual;
+-- TO_CHAR
+select to_char(sysdate, 'hh:mm') from dual;
+ -- TO_DATE
+select to_date('01/' || to_char(sysdate,'mm') || '/23') from dual; --dd/mm/yy hh:mm:ss
+select to_date('01/11/2023' || to_char(sysdate, 'mm')) from dual;
+--Ejercicio 16
+--1
+select to number ('1000.45','9999.99') from dual;
+--2
+select to number ('1000.45€','9999.99L') from dual;
+--3
+select to number ('-$1000.45','S$9999.99') from dual;
+--4
+select  to_char(sysdate,'dd/mm/yyyy'),
+        sysdate,
+        to_char(sysdate,'dd-mon-yyyy'),
+        to_char(sysdate,'dd') || ' de ' || replace(to_char(sysdate,'month'),' ','') || ' de ' || to_char(sysdate,'yyyy')
+            from dual;
+--5
+select to_number(substr(ID,2,length(ID)-1),'99999') from futbolistas;
+--6
+select to_char(fecha_nacimiento,'yyyy') from futbolistas order by fecha_nacimiento:
+
 

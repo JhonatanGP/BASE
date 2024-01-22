@@ -21,3 +21,6 @@ SELECT CONCAT(SUBSTR(NOMBRE,0,3)||'-',APELLIDOS)"NOM-APELLIDO", LENGTH(APELLIDOS
 /*4. Queremos un listado de los nombres de los futbolistas quitando los segundos nombres (nombres compuestos, por ejemplo, borrar LUIS de PEDRO LUIS,
 quedando solo PEDRO) y poner como alias de columna "SOLO NOMBRE".*/
 SELECT NVL(SUBSTR(NOMBRE,0,INSTR(NOMBRE,' ')),NOMBRE) "SOLO NOMBRE" FROM FUTBOLISTAS;
+/*Otras soluciones
+selectnombre from futbolistas;
+select instr(nombre,' ',1,instr nombre;
