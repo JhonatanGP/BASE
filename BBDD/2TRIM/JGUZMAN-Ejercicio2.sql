@@ -1,4 +1,4 @@
---EJERCICIO SEMNAL 2
+--EJERCICIO SEMANAL 2
 
 /*1. Devuelve el nombre (solo may�scula la primera letra), el presupuesto reducido en 250000 seguido por un espacio y la palabra euros, el presupuesto
 actual seguido por un espacio y la palabra euros, y el presupuesto m�s el 10% del mismo seguido de un espacio y la palabra euros, correspondiente a 
