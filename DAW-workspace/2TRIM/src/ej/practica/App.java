@@ -18,7 +18,6 @@ public class App {
  		int carreras = caballo2.getCarrerasGanadas();
  		System.out.println(carreras);
  		
- 		
 	}
 
 }
